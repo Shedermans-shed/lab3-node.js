@@ -19,3 +19,16 @@ const server = app.listen(port, () => {
 app.get("/contacts", (req, res) => {
   res.render("contacts");
 });
+
+//route for signup
+app.get("/register", (req, res) => {
+  res.render("register");
+});
+//route for signin
+app.get("/login", (req, res) => {
+  res.render("login");
+});
+
+//pass requests to the router middleware
+const router = require("./routes/post");
+app.use(router);
